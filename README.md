@@ -94,8 +94,8 @@ python src/pipeline.py
 
 This will:
 1. Generate synthetic data
-2. Analyze the data using the time decay attribution method
-3. Print the top 5 influential articles
+2. Analyze the data using the count attribution method
+3. Print the top 3 influential articles
 
 ## Testing
 
@@ -112,25 +112,28 @@ The tests cover:
 
 ## Attribution Methods
 
-1. **First Touch**
+1. **Count**
+   - Counts the number of occurrences of each article in a successfully registered user journey.
+
+2. **First Touch**
    - Credits 100% to the first article in the journey
    - Best for understanding initial user acquisition
 
-2. **Last Touch**
+3. **Last Touch**
    - Credits 100% to the last article before registration
    - Best for identifying final conversion drivers
 
-3. **Linear**
+4. **Linear**
    - Distributes credit evenly across all articles
    - Best for understanding overall content effectiveness
 
-4. **Position-based**
+5. **Position-based**
    - First article: 40%
    - Last article: 40%
    - Middle articles: 20%
    - Best for understanding the importance of position
 
-5. **Time Decay**
+6. **Time Decay**
    - Uses exponential decay based on position
    - Later articles receive more credit
    - Best for understanding recency effects
