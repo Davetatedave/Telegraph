@@ -199,13 +199,13 @@ if __name__ == "__main__":
         num_users=1000, num_articles=50, output_path="synthetic_hitlog.csv"
     )
 
-    def analysis(attribution_method="count", dir="synthetic_hitlog.csv"):
+    def analysis(attribution_method="count", dir="synthetic_hitlog.csv", top=3):
         # Analyze the data
         results = analyze_user_journeys(dir, attribution_method)
-        top3 = results.head(3)
+        topN = results.head(top)
 
         print(f"\nTop 3 influential articles using {attribution_method}:")
-        print(top3)
-        top3.to_csv("influential_articles.csv", index=False)
+        print(topN)
+        topN.to_csv("influential_articles.csv", index=False)
 
     analysis()
