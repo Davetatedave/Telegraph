@@ -204,7 +204,7 @@ if __name__ == "__main__":
         results = analyze_user_journeys(dir, attribution_method)
         topN = results.head(top)
 
-        print(f"\nTop 3 influential articles using {attribution_method}:")
+        print(f"\nTop {top} influential articles using {attribution_method}:")
         print(topN)
         topN.to_csv("influential_articles.csv", index=False)
 
